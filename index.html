@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Using the Social Science Reproduction Platform in Replication Games</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Fernando Hoces de la Guardia, BITSS" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Using the Social Science Reproduction Platform in Replication Games
+]
+.subtitle[
+## I4R Replication Week
+]
+.author[
+### Fernando Hoces de la Guardia, BITSS
+]
+.date[
+### October 2023
+]
+
+---
+
+
+background-image:  url(Images/home_page.png)
+background-size: 600px
+background-position: 50% 45%
+count:true
+
+
+
+&lt;style&gt;
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+pre.sourceCode {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+
+/*
+.remark-slide-number {
+  position: inherit;
+}
+
+.remark-slide-number .progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  display: block;
+  left: 0;
+  right: 0;
+}
+
+.remark-slide-number .progress-bar {
+  height: 100%;
+  background-color: blue;
+}
+*/
+&lt;/style&gt;
+
+
+
+&lt;style type="text/css"&gt;
+# CSS for including pauses in printed PDF output (see bottom of lecture)
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+
+&lt;/style&gt;
+
+
+
+
+
+# About Us: BITSS et. al. 
+
+.font140[
+
+**Our goal:** Standardize and preserve knowledge generated in reproduction exercises. 
+
+&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
+
+.center[
+[www.socialsciencereproduction.org](www.socialsciencereproduction.org)
+]
+
+]
+
+
+---
+
+# What Type of Reproduction Excercise?
+
+.font120[Every semester, graduate students around **the world** take an Empirical/Applied [`...`] Economics course (e.g., Labor, Development). A typical assignment consists of reproducing the results of a paper and, possibly, testing the robustness of its results. ]
+
+--
+   
+
+|       Stage       	|                         New Knowledge                        	|
+|:-----------------:	|:------------------------------------------------------------:	|
+|  &lt;/br&gt;&lt;/br&gt; 	|                                          	|
+| &lt;/br&gt;&lt;/br&gt;            	|  	|
+| &lt;/br&gt;&lt;/br&gt;           	|  	|
+| &lt;/br&gt;&lt;/br&gt;   	|  &lt;/br&gt;          	|
+
+
+
+
+---
+count:false 
+
+# What Type of Reproduction Excercise?
+
+.font120[Every semester, graduate students around **the world** take an Empirical/Applied [`...`] Economics course (e.g., Labor, Development). A typical assignment consists of reproducing the results of a paper and, possibly, testing the robustness of its results. ]
+
+   
+
+|       Stage       	|                         New Knowledge                        	|
+|:-----------------:	|:------------------------------------------------------------:	|
+| Scope &lt;/br&gt; (select and verify) 	| Data and code exist?                                         	|
+| &lt;/br&gt;&lt;/br&gt;            	|  	|
+| &lt;/br&gt;&lt;/br&gt;           	|  	|
+| &lt;/br&gt;&lt;/br&gt;   	|  &lt;/br&gt;          	|
+
+---
+count:false 
+
+# What Type of Reproduction Excercise?
+
+.font120[Every semester, graduate students around **the world** take an Empirical/Applied [`...`] Economics course (e.g., Labor, Development). A typical assignment consists of reproducing the results of a paper and, possibly, testing the robustness of its results. ]
+
+
+   
+
+|       Stage       	|                         New Knowledge                        	|
+|:-----------------:	|:------------------------------------------------------------:	|
+| Scope &lt;/br&gt; (select and verify) 	| Data and code exist?                                         	|
+| Assess            	| Degree of reproducibility for &lt;br&gt;specific part of the paper 	|
+| &lt;/br&gt;&lt;/br&gt;           	|  	|
+| &lt;/br&gt;&lt;/br&gt;   	|  &lt;/br&gt;          	|
+
+---
+count:false 
+
+# What Type of Reproduction Excercise?
+
+.font120[Every semester, graduate students around **the world** take an Empirical/Applied [`...`] Economics course (e.g., Labor, Development). A typical assignment consists of reproducing the results of a paper and, possibly, testing the robustness of its results. ]
+
+
+   
+
+|       Stage       	|                         New Knowledge                        	|
+|:-----------------:	|:------------------------------------------------------------:	|
+| Scope &lt;/br&gt; (select and verify) 	| Data and code exist?                                         	|
+| Assess            	| Degree of reproducibility for &lt;br&gt;specific part of the paper 	|
+| Improve           	| E.g. fixed paths, libraries,&lt;br&gt;added missing files, etc.    	|
+| &lt;/br&gt;&lt;/br&gt;   	|  &lt;/br&gt;          	|
+
+---
+count:false 
+
+# What Type of Reproduction Excercise?
+
+.font120[Every semester, graduate students around **the world** take an Empirical/Applied [`...`] Economics course (e.g., Labor, Development). A typical assignment consists of reproducing the results of a paper and, possibly, testing the robustness of its results. ]
+
+|       Stage       	|                         New Knowledge                        	|
+|:-----------------:	|:------------------------------------------------------------:	|
+| Scope &lt;/br&gt; (select and verify) 	| Data and code exist?                                         	|
+| Assess            	| Degree of reproducibility for &lt;br&gt;specific part of the paper 	|
+| Improve           	| E.g. fixed paths, libraries,&lt;br&gt;added missing files, etc.    	|
+| Test robustness   	| Results are robust to additional &lt;br&gt;specifications          	|
+
+.font120[
+.center[**Key challenge: Standardization**]
+]
+
+
+---
+background-image:  url(Images/reproductions-w-i4r.svg)
+background-size: 500px
+background-position: 100% 50%
+
+# Complementarities With I4R
+
+.pull-left[
+.font130[
+- Contributions of I4R: 
+
+   1. Increase the total number of reproductions with Replication Games (200!)
+   2. Institutionalized an outlet to published constructive summaries for an important fraction of these exercises:  Discussion Paper Series (80!).  
+]
+]
+
+
+---
+background-image:  url(Images/repro-replic-cont.svg)
+background-size: 700px
+background-position: 50% 55%
+
+# Complementarities With I4R
+
+.font130[
+- SSRP can help as a starting point in the Reproduction-Replication continuum
+- How can the SSRP can help Replication Game participants: 
+  - As a companion and record to the reproduction section of the exercise. 
+  
+ &lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
+
+- Aspiration: every RG participants/team enters a reproduction in the SSRP at the end of a RG day to standardize and preserve the non-replication part of its exercise. 
+
+]
+
+---
+background-image:  url(Images/stages.svg), url(Images/paper-claims.svg), url(Images/use2.png)
+background-size: 600px, 300px, 400px 
+background-position: 15% 20%, 20% 60%, 85% 40%
+# Pros and Cons of Using the SSRP for RGs Today
+
+.font130[
+- **Strengths**: Detailed guidance, and flexible platform to record as much detail as possible from a reproduction exercise.  
+
+&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
+
+- **Weakness**: Too much detail can be overwhelming. Lots of space for improvement in user experience.
+]
+---
+background-image: url(Images/metrics3.png)
+background-size:  contain
+count:true
+# Current Users of the SSRP
+
+
+---
+count: true  
+background-image: 
+background-size: 610px
+background-position: 75% 0%
+  
+# Demo of RG-type Reproduction in the SSRP
+.font120[
+- We will start by looking at a high profile journal: AER-I 
+- Starting from the latest look for a paper that has a reproduction package with data and code: [June 2023 Issue](https://www.aeaweb.org/issues/723) (September had none!)
+- First found with data and code: [Leonardi &amp; Moretti (2023)](https://eml.berkeley.edu/%7Emoretti/restaurants.pdf)
+- Let's go to [socialsciencereproduction.org](www.socialsciencereproduction.org)
+    0. Create an account/Log in. 
+    1. Start a new reproduction.
+    2. Look for the paper's DOI.
+    3. Download [reproduction package](https://www.openicpsr.org/openicpsr/project/170981/version/V1/view?path=/openicpsr/170981/fcr:versions/V1&amp;type=project), and check readme file to see if there is enough data to conduct a reproduction.
+    4. [Optional] Set up a repository for your potential improvements.  
+- Now we will see how to record this reproduction with some detail, and just the essential. 
+]
+---
+
+# Demo: Some Detail 1/2   
+
+**Scope:**   
+1. Read the paper and define the scope of exercise: Identify the claim(s) of interest, and the display items that present evidence supporting this claim(s). 
+ - "We find that after 2005, the geographical concentration of restaurants increased sharply and at an accelerating rate."  
+ - Figure 2 (show how to enter it in table)
+
+**Assess:**    
+1. Read the readme file. 
+2. [Optional] Provide a description of the materials found in the materials 
+3. try to run the code
+   - Change directories 
+   - In my environment, I have `set varabbrev off` so here I need to turn them on again. 
+   - `ssc install outreg2`
+   - After modification, the code runs, and produces same output. 
+4. Report.
+
+---
+# Demo: Some Detail 2/2    
+**[Optional] Improve:**
+1. Record the improvements made above
+   - Added line to make it robust to no abbreviations. 
+   - Added line to install `outreg2`
+   
+2. Suggest specific improvements:
+   - Separate the file `replication_submit.do` into smaller self contained scripts (start with line 91). 
+
+**[Optional] Robustness Check:**
+ - Lines 245-248 looks strange, lets see how the results change without them
+ - Report results (and add more suggestions for improvements if you want)
+
+---
+# Demo: Just The Essentials
+  
+**Scope:**   
+1. Skip (record blank)
+
+**Assess:**    
+1. try to run the code
+   - Change directories 
+   - In my environment, I have `set varabbrev off` so here I need to turn them on again. 
+   - `ssc install outreg2`
+   - After modification, the code runs, and produces same output. 
+2. Report: 
+    - Click on Assess display item, click "+Assess additional display item" 
+    - Add caption and answer yes to next question (5.1.1.2)
+    - Then finish the assessment (materials, computation, subjective assessment)
+
+Submit reproduction.    
+    
+- **Upcoming Feature:** Minimal Reproduction Version (Mid November): The essential reproduction, without having to know how to navigate to get it. 
+
+
+---
+class: inverse, center, middle
+
+# .font140[Thank You]
+
+
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=100%&gt;&lt;/html&gt;
+
+.font190[
+&lt;acre@berkeley.edu&gt;  
+&lt;fhoces@berkeley.edu&gt;
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

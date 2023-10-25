@@ -1,0 +1,346 @@
+---
+title: "Using the Social Science Reproduction Platform in Replication Games"
+author: "Fernando Hoces de la Guardia, BITSS"
+subtitle: "I4R Replication Week"
+date:  "October 2023"
+output: 
+  xaringan::moon_reader:
+    footer: "These slides available at https://bitss.github.io/slides-ssrp-i4r/"
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+#      slideNumberFormat: |
+#          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+editor_options: 
+  chunk_output_type: console
+---
+
+background-image:  url(Images/home_page.png)
+background-size: 600px
+background-position: 50% 45%
+count:true
+
+
+
+<style>
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+pre.sourceCode {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+
+/*
+.remark-slide-number {
+  position: inherit;
+}
+
+.remark-slide-number .progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  display: block;
+  left: 0;
+  right: 0;
+}
+
+.remark-slide-number .progress-bar {
+  height: 100%;
+  background-color: blue;
+}
+*/
+</style>
+
+
+
+```{css, echo=FALSE}
+# CSS for including pauses in printed PDF output (see bottom of lecture)
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+
+```
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center",  
+  fig.height=4, #fig.width=6,
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T ,#, 
+  echo=F #warning=F, message=F
+  )
+library(tidyverse)
+library(hrbrthemes)
+library(fontawesome)
+library(kableExtra)
+
+```
+
+
+# About Us: BITSS et. al. 
+
+.font140[
+
+**Our goal:** Standardize and preserve knowledge generated in reproduction exercises. 
+
+</br></br></br></br></br></br></br></br></br>
+
+.center[
+[www.socialsciencereproduction.org](www.socialsciencereproduction.org)
+]
+
+]
+
+
+---
+
+# What Type of Reproduction Excercise?
+
+.font120[Every semester, graduate students around **the world** take an Empirical/Applied [`...`] Economics course (e.g., Labor, Development). A typical assignment consists of reproducing the results of a paper and, possibly, testing the robustness of its results. ]
+
+--
+   
+
+|       Stage       	|                         New Knowledge                        	|
+|:-----------------:	|:------------------------------------------------------------:	|
+|  </br></br> 	|                                          	|
+| </br></br>            	|  	|
+| </br></br>           	|  	|
+| </br></br>   	|  </br>          	|
+
+
+
+
+---
+count:false 
+
+# What Type of Reproduction Excercise?
+
+.font120[Every semester, graduate students around **the world** take an Empirical/Applied [`...`] Economics course (e.g., Labor, Development). A typical assignment consists of reproducing the results of a paper and, possibly, testing the robustness of its results. ]
+
+   
+
+|       Stage       	|                         New Knowledge                        	|
+|:-----------------:	|:------------------------------------------------------------:	|
+| Scope </br> (select and verify) 	| Data and code exist?                                         	|
+| </br></br>            	|  	|
+| </br></br>           	|  	|
+| </br></br>   	|  </br>          	|
+
+---
+count:false 
+
+# What Type of Reproduction Excercise?
+
+.font120[Every semester, graduate students around **the world** take an Empirical/Applied [`...`] Economics course (e.g., Labor, Development). A typical assignment consists of reproducing the results of a paper and, possibly, testing the robustness of its results. ]
+
+
+   
+
+|       Stage       	|                         New Knowledge                        	|
+|:-----------------:	|:------------------------------------------------------------:	|
+| Scope </br> (select and verify) 	| Data and code exist?                                         	|
+| Assess            	| Degree of reproducibility for <br>specific part of the paper 	|
+| </br></br>           	|  	|
+| </br></br>   	|  </br>          	|
+
+---
+count:false 
+
+# What Type of Reproduction Excercise?
+
+.font120[Every semester, graduate students around **the world** take an Empirical/Applied [`...`] Economics course (e.g., Labor, Development). A typical assignment consists of reproducing the results of a paper and, possibly, testing the robustness of its results. ]
+
+
+   
+
+|       Stage       	|                         New Knowledge                        	|
+|:-----------------:	|:------------------------------------------------------------:	|
+| Scope </br> (select and verify) 	| Data and code exist?                                         	|
+| Assess            	| Degree of reproducibility for <br>specific part of the paper 	|
+| Improve           	| E.g. fixed paths, libraries,<br>added missing files, etc.    	|
+| </br></br>   	|  </br>          	|
+
+---
+count:false 
+
+# What Type of Reproduction Excercise?
+
+.font120[Every semester, graduate students around **the world** take an Empirical/Applied [`...`] Economics course (e.g., Labor, Development). A typical assignment consists of reproducing the results of a paper and, possibly, testing the robustness of its results. ]
+
+|       Stage       	|                         New Knowledge                        	|
+|:-----------------:	|:------------------------------------------------------------:	|
+| Scope </br> (select and verify) 	| Data and code exist?                                         	|
+| Assess            	| Degree of reproducibility for <br>specific part of the paper 	|
+| Improve           	| E.g. fixed paths, libraries,<br>added missing files, etc.    	|
+| Test robustness   	| Results are robust to additional <br>specifications          	|
+
+.font120[
+.center[**Key challenge: Standardization**]
+]
+
+
+---
+background-image:  url(Images/reproductions-w-i4r.svg)
+background-size: 500px
+background-position: 100% 50%
+
+# Complementarities With I4R
+
+.pull-left[
+.font130[
+- Contributions of I4R: 
+
+   1. Increase the total number of reproductions with Replication Games (200!)
+   2. Institutionalized an outlet to published constructive summaries for an important fraction of these exercises:  Discussion Paper Series (80!).  
+]
+]
+
+
+---
+background-image:  url(Images/repro-replic-cont.svg)
+background-size: 700px
+background-position: 50% 55%
+
+# Complementarities With I4R
+
+.font130[
+- SSRP can help as a starting point in the Reproduction-Replication continuum
+- How can the SSRP can help Replication Game participants: 
+  - As a companion and record to the reproduction section of the exercise. 
+  
+ </br></br></br></br></br>
+
+- Aspiration: every RG participants/team enters a reproduction in the SSRP at the end of a RG day to standardize and preserve the non-replication part of its exercise. 
+
+]
+
+---
+background-image:  url(Images/stages.svg), url(Images/paper-claims.svg), url(Images/use2.png)
+background-size: 600px, 300px, 400px 
+background-position: 15% 20%, 20% 60%, 85% 40%
+# Pros and Cons of Using the SSRP for RGs Today
+
+.font130[
+- **Strengths**: Detailed guidance, and flexible platform to record as much detail as possible from a reproduction exercise.  
+
+</br></br></br></br></br></br></br></br></br>
+
+- **Weakness**: Too much detail can be overwhelming. Lots of space for improvement in user experience.
+]
+---
+background-image: url(Images/metrics3.png)
+background-size:  contain
+count:true
+# Current Users of the SSRP
+
+
+---
+count: true  
+background-image: 
+background-size: 610px
+background-position: 75% 0%
+  
+# Demo of RG-type Reproduction in the SSRP
+.font120[
+- We will start by looking at a high profile journal: AER-I 
+- Starting from the latest look for a paper that has a reproduction package with data and code: [June 2023 Issue](https://www.aeaweb.org/issues/723) (September had none!)
+- First found with data and code: [Leonardi & Moretti (2023)](https://eml.berkeley.edu/%7Emoretti/restaurants.pdf)
+- Let's go to [socialsciencereproduction.org](www.socialsciencereproduction.org)
+    0. Create an account/Log in. 
+    1. Start a new reproduction.
+    2. Look for the paper's DOI.
+    3. Download [reproduction package](https://www.openicpsr.org/openicpsr/project/170981/version/V1/view?path=/openicpsr/170981/fcr:versions/V1&type=project), and check readme file to see if there is enough data to conduct a reproduction.
+    4. [Optional] Set up a repository for your potential improvements.  
+- Now we will see how to record this reproduction with some detail, and just the essential. 
+]
+---
+
+# Demo: Some Detail 1/2   
+
+**Scope:**   
+1. Read the paper and define the scope of exercise: Identify the claim(s) of interest, and the display items that present evidence supporting this claim(s). 
+ - "We find that after 2005, the geographical concentration of restaurants increased sharply and at an accelerating rate."  
+ - Figure 2 (show how to enter it in table)
+
+**Assess:**    
+1. Read the readme file. 
+2. [Optional] Provide a description of the materials found in the materials 
+3. try to run the code
+   - Change directories 
+   - In my environment, I have `set varabbrev off` so here I need to turn them on again. 
+   - `ssc install outreg2`
+   - After modification, the code runs, and produces same output. 
+4. Report.
+
+---
+# Demo: Some Detail 2/2    
+**[Optional] Improve:**
+1. Record the improvements made above
+   - Added line to make it robust to no abbreviations. 
+   - Added line to install `outreg2`
+   
+2. Suggest specific improvements:
+   - Separate the file `replication_submit.do` into smaller self contained scripts (start with line 91). 
+
+**[Optional] Robustness Check:**
+ - Lines 245-248 looks strange, lets see how the results change without them
+ - Report results (and add more suggestions for improvements if you want)
+
+---
+# Demo: Just The Essentials
+  
+**Scope:**   
+1. Skip (record blank)
+
+**Assess:**    
+1. try to run the code
+   - Change directories 
+   - In my environment, I have `set varabbrev off` so here I need to turn them on again. 
+   - `ssc install outreg2`
+   - After modification, the code runs, and produces same output. 
+2. Report: 
+    - Click on Assess display item, click "+Assess additional display item" 
+    - Add caption and answer yes to next question (5.1.1.2)
+    - Then finish the assessment (materials, computation, subjective assessment)
+
+Submit reproduction.    
+    
+- **Upcoming Feature:** Minimal Reproduction Version (Mid November): The essential reproduction, without having to know how to navigate to get it. 
+
+
+---
+class: inverse, center, middle
+
+# .font140[Thank You]
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=100%></html>
+
+.font190[
+<acre@berkeley.edu>  
+<fhoces@berkeley.edu>
+]
+```{r gen_pdf, include = FALSE, cache = FALSE, eval = TRUE}
+pagedown::chrome_print("01_slides.html", output = "01_slides.pdf")
+```
